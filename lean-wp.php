@@ -17,9 +17,6 @@
 
  * Text Domain: 		lean-wp
 
- * GitHub Plugin URI:	https://github.com/senlin/lean-wp
- * GitHub Branch:		develop
-
  * @package WordPress
  * @author SO WP
  * @since 1.0.0

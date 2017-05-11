@@ -1,18 +1,25 @@
 === LEAN WP ===
-Contributors: hlashbrooke
-Donate link: http://www.hughlashbrooke.com/donate
-Tags: wordpress, plugin, template
-Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Contributors: senlin
+Donate link: https://so-wp.com/plugins/donations
+Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
+Requires at least: 4.7.3
+Tested up to: 4.8
+Stable tag: 1.0.0
+License: GPL-3.0+
+License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-This is where you craft a short, punchy description of your plugin
+Using WP for a company site? Then you should install LEAN WP to make the WordPress front- and back-end suitable for companies.
+LEAN WP: WordPress for companies, without the bloat!
 
 == Description ==
 
-This is where you can give a much longer description of your plugin that you can use to explain just how it awesome it really is.
+WordPress is getting bloated. And that is especially true if you're using WP to build a company website. 
+
+Customizer, Distraction Free Writing, Emojis, Embeds, the list keeps getting larger with more nonsense and more bloat. There have been rumors about forking WordPress to have a more business oriented version, but such things are merely talk and will never really get off the ground.
+
+The better way in our opinion is to use the WP infrastructure and to simply remove all the unwanted things by using actions and filters.
+
+The result is LEAN WP.
 
 == Installation ==
 
@@ -36,12 +43,7 @@ This plugin template is designed to help you get started with any new WordPress 
 
 == Changelog ==
 
-= 1.0 =
-* 2012-12-13
-* Initial release
+= 1.0.0 =
 
-== Upgrade Notice ==
-
-= 1.0 =
-* 2012-12-13
+* 2017-5-11
 * Initial release

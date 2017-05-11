@@ -16,7 +16,6 @@
  * License URI:			http://www.gnu.org/licenses/gpl-3.0.txt
 
  * Text Domain: 		lean-wp
- * Domain Path: 		/lang/
 
  * GitHub Plugin URI:	https://github.com/senlin/lean-wp
  * GitHub Branch:		develop
@@ -26,6 +25,7 @@
  * @since 1.0.0
  */
 
+// don't load the plugin file directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Load plugin class files
@@ -60,8 +60,3 @@ function LEAN_WP () {
 		$instance->settings = LEAN_WP_Settings::instance( $instance );
 	}
 */
-
-	return $instance;
-}
-
-LEAN_WP();

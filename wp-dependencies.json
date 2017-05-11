@@ -1,46 +1,4 @@
 [
-/*
-  {
-    "name": "Disable Embeds",
-    "host": "wordpress",
-    "slug": "disable-embeds/disable-embeds.php",
-    "uri": "https://wordpress.org/plugins/disable-embeds/",
-    "branch": "trunk",
-    "optional": false
-  },
-  {
-    "name": "Disable Emojis",
-    "host": "wordpress",
-    "slug": "disable-emojis/disable-emojis.php",
-    "uri": "https://wordpress.org/plugins/disable-emojis/",
-    "branch": "trunk",
-    "optional": false
-  },
-  {
-    "name": "Disable REST API",
-    "host": "wordpress",
-    "slug": "disable-json-api/disable-json-api.php",
-    "uri": "https://wordpress.org/plugins/disable-json-api/",
-    "branch": "trunk",
-    "optional": false
-  },
-  {
-    "name": "mypace Remove Comments Feed Link",
-    "host": "wordpress",
-    "slug": "mypace-remove-comments-feed-link/mypace-remove-comments-feed-link.php",
-    "uri": "https://wordpress.org/plugins/mypace-remove-comments-feed-link/",
-    "branch": "trunk",
-    "optional": false
-  },
-  {
-    "name": "WP Comment Humility",
-    "host": "wordpress",
-    "slug": "wp-comment-humility/wp-comment-humility.php",
-    "uri": "https://wordpress.org/plugins/wp-comment-humility/",
-    "branch": "trunk",
-    "optional": false
-  },
-*/
   {
     "name": "Customizer Remove All Parts",
     "host": "wordpress",

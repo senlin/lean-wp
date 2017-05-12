@@ -150,14 +150,14 @@ class LEAN_WP {
 		// Disable file editors
 		if ( ! defined( 'DISALLOW_FILE_EDIT' ) )
 			define( 'DISALLOW_FILE_EDIT', true );
-			
+
 		// Set different defaults for certain options
 		add_action( 'init', array( $this, 'update_options' ) );
 
 		// remove contextual help and screen options
 		add_filter( 'screen_options_show_screen', '__return_false' );
 		add_filter( 'contextual_help', array( $this, 'remove_contextual_help' ), 999, 3 );
-		
+
 		// remove admin footer text and WP version
 		add_filter( 'admin_footer_text', '__return_empty_string', 11 );
 		add_filter( 'update_footer',     '__return_empty_string', 11 );
@@ -310,7 +310,7 @@ class LEAN_WP {
 		/*** FRONTEND ***/
 		// remove Dashboard link
 		$wp_admin_bar->remove_node( 'dashboard' );
-		
+
 		// remove Themes, Widgets, Menus, Header links 
 		$wp_admin_bar->remove_node( 'appearance' );
 	}
@@ -395,7 +395,7 @@ class LEAN_WP {
 		set_user_setting( 'editor_expand', 'off' );
 
 	}
-	
+
 	/**
 	 * Customise admin menu sidebar order.
 	 *
@@ -404,16 +404,16 @@ class LEAN_WP {
 	 * @since 1.0.0
 	 */
 	public function custom_menu_order( $menu_ord ) {
-	
+
 		if ( ! $menu_ord ) return true;
-	
+
 		return array(
 			'index.php', // Dashboard
 			'separator1', // First separator
 			'edit.php?post_type=page', // Pages
 		);
 	}
-	
+
 	/**
 	 * Change default reading setting  "Front page displays"
 	 *
@@ -424,7 +424,6 @@ class LEAN_WP {
 	public function show_page_on_front() {
 	    return 'page';
 	}
-	
 
 	/**
 	 * Set different defaults for certain options
@@ -442,7 +441,7 @@ class LEAN_WP {
 		update_option( 'default_pingback_flag', 0 );
 		update_option( 'default_ping_status', 0 );
 	}
-	
+
 	/**
 	 * Remove contextual help tabs
 	 *
@@ -461,33 +460,33 @@ class LEAN_WP {
 	 * @since 1.0.0
 	 */
 	public function clean_head() {
-	
+
 		// EditURI link
 		remove_action( 'wp_head', 'rsd_link' );
-	
+
 		// windows live writer
 		remove_action( 'wp_head', 'wlwmanifest_link' );
-	
+
 		// index link
 		remove_action( 'wp_head', 'index_rel_link' );
-	
+
 		// previous link
 		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-	
+
 		// start link
 		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-	
+
 		// links for adjacent posts
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-	
+
 		// wp shortlink
 		remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-	
+
 		// WP version
 		remove_action( 'wp_head', 'wp_generator' );
-	
+
 	} // end clean_head()
-	
+
 	/**
 	 * Remove WP version from RSS.
 	 *
@@ -496,7 +495,7 @@ class LEAN_WP {
 	public function remove_wp_version_from_rss() {
 		return '';
 	}
-	
+
 	/**
 	 * Disable author archives.
 	 *
@@ -512,7 +511,6 @@ class LEAN_WP {
 		} else {
 			redirect_canonical();
 		}
-	
 	}
 	/**
 	 * Block WP enum scans.

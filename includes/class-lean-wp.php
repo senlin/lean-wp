@@ -18,7 +18,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $settings = null;
+	//public $settings = null;
 
 	/**
 	 * The version number.
@@ -26,7 +26,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $_version;
+	public $version;
 
 	/**
 	 * The token.
@@ -34,7 +34,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $_token;
+	//public $_token;
 
 	/**
 	 * The main plugin file.
@@ -58,7 +58,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $assets_dir;
+	//public $assets_dir;
 
 	/**
 	 * The plugin assets URL.
@@ -66,7 +66,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $assets_url;
+	//public $assets_url;
 
 	/**
 	 * Suffix for Javascripts.
@@ -74,7 +74,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	public $script_suffix;
+	//public $script_suffix;
 
 	/**
 	 * Constructor function.
@@ -409,8 +409,8 @@ class LEAN_WP {
 
 		return array(
 			'index.php', // Dashboard
-			'separator1', // First separator
-			'edit.php?post_type=page', // Pages
+			'separator1', // separator
+			'edit.php?post_type=page' // Pages
 		);
 	}
 

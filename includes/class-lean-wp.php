@@ -359,9 +359,9 @@ class LEAN_WP {
 		// remove Tools menu
 		remove_menu_page( 'tools.php' );
 
-		// remove "Header" and "Footer" sub-menus from "Appearance"
+		// remove "Header" and "Custom Background" sub-menus from "Appearance"
 		remove_submenu_page( 'themes.php', 'custom-header' );
-		remove_submenu_page( 'themes.php', 'custom-footer' );
+		remove_submenu_page( 'themes.php', 'custom-background' );
 
 	}
 

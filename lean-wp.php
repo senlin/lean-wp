@@ -60,3 +60,4 @@ function LEAN_WP () {
 		$instance->settings = LEAN_WP_Settings::instance( $instance );
 	}
 */
+}

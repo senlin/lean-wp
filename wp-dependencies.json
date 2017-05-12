@@ -1,5 +1,13 @@
 [
   {
+    "name": "Admin Menu Manager",
+    "host": "wordpress",
+    "slug": "admin-menu-manager/admin-menu-manager.php",
+    "uri": "https://wordpress.org/plugins/admin-menu-manager/",
+    "branch": "trunk",
+    "optional": true
+  },
+  {
     "name": "Customizer Remove All Parts",
     "host": "wordpress",
     "slug": "customizer-remove-all-parts/wp-crap.php",

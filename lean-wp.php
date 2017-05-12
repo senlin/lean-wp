@@ -62,3 +62,6 @@ function LEAN_WP () {
 */
 
 }
+
+LEAN_WP();
+

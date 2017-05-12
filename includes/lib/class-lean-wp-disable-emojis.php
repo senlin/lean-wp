@@ -7,7 +7,7 @@
 // Exit if accessed directly
 defined( 'ABSPATH' ) || exit;
 
-	add_action( 'init', array( $this, 'disable_emojis' ) );
+	add_action( 'init', 'lwp_disable_emojis' );
 
 	/**
 	 * Disable the emoji's

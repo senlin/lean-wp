@@ -141,8 +141,15 @@ class LEAN_WP {
 		// Disable scrollfree editor
 		add_action( 'after_setup_theme', array( $this, 'scrollfree_editor_off' ) );
 
-		add_filter( 'custom_menu_order', array( $this, 'custom_menu_order' ) ); // Activate custom_menu_order
-		add_filter( 'menu_order', array( $this, 'custom_menu_order' ) );
+		// Reorder Pages, Posts and Media
+		add_action( 'admin_menu', array( $this, 'reorder_pages_posts_media' ) );
+		
+		// Prevents plugins from injecting themselves as top level menus (example: Jetpack)
+		add_filter( 'custom_menu_order', '__return_true' );
+		add_filter( 'menu_order', array( $this, 'menu_order' ), 99 );
+
+		// Move Gravity Forms menu down if plugin is active
+		add_filter( 'gform_menu_position', array( $this, 'gform_under_settings' ) );
 
 		// Set Reading Settings "Front page displays" to Page
 		add_filter( 'pre_option_show_on_front', array( $this, 'show_page_on_front' ) );
@@ -154,11 +161,11 @@ class LEAN_WP {
 		// Set different defaults for certain options
 		add_action( 'init', array( $this, 'update_options' ) );
 
-		// remove contextual help and screen options
+		// Remove contextual help and screen options
 		add_filter( 'screen_options_show_screen', '__return_false' );
 		add_filter( 'contextual_help', array( $this, 'remove_contextual_help' ), 999, 3 );
 
-		// remove admin footer text and WP version
+		// Remove admin footer text and WP version
 		add_filter( 'admin_footer_text', '__return_empty_string', 11 );
 		add_filter( 'update_footer',     '__return_empty_string', 11 );
 
@@ -397,21 +404,68 @@ class LEAN_WP {
 	}
 
 	/**
-	 * Customise admin menu sidebar order.
+	 * Reorder Pages, Posts and Media admin menus
 	 *
-	 * @source: //code.tutsplus.com/articles/customizing-your-wordpress-admin--wp-24941
+	 * * Pages gets position 5
+	 * * Posts gets position 50
+	 * * Media gets position 58 (before separator of Appearance)
+	 *
+	 * This means that there is ample space to position Custom Post Types
+	 *
+	 * @source: //randyhoyt.com/wordpress/admin/
+	 * @source: //cdn.tutsplus.com/wp/uploads/legacy/228_Customizing_Your_WordPress_Admin/chart.gif
 	 *
 	 * @since 1.0.0
 	 */
-	public function custom_menu_order( $menu_ord ) {
+	function reorder_pages_posts_media() {
+		global $menu;
+		$menu[50] = $menu[5]; // Posts goes from position 5 to position 50
+		$menu[58] = $menu[10]; // Media goes from position 10 to position 58 (right above Appearance-separator)
+		$menu[5] = $menu[20]; // Pages goes from position 20 to position 5 (originally Posts)
+		unset($menu[10]); //remove Media from original position
+		unset($menu[20]); //remove Pages from original position
+	}
 
-		if ( ! $menu_ord ) return true;
+	/**
+	 * Prevents plugins from injecting themselves as top level menus (example: Jetpack)
+	 *
+	 * @source: based on Menu Humility plugin - //wordpress.org/plugins/menu-humility/
+	 *
+	 * @since 1.0.0
+	 */
+	public function menu_order( $menu ) {
 
-		return array(
-			'index.php', // Dashboard
-			'separator1', // separator
-			'edit.php?post_type=page' // Pages
-		);
+		if ( ! $menu ) return true;
+
+		$penalty_box = array();
+
+		foreach ( $menu as $key => $item ) {
+			if ( 'separator1' == $item ) {
+				// Have reached the content area. We're done.
+				break;
+			} elseif ( 'index.php' !== $item ) {
+				// Yank it out and put it in the penalty box.
+				$penalty_box[] = $item;
+				unset( $menu[$key] );
+			}
+		}
+
+		// Shove the penalty box items onto the end
+		return array_merge( $menu, $penalty_box );
+
+	}
+
+	/**
+	 * Move Gravity Forms admin menu under Settings
+	 *
+	 * @source: //gravityhelp.com/documentation/article/gform_menu_position/
+	 *
+	 * @since 1.0.0
+	 */
+	public function gform_under_settings( $position ) {
+	    if ( is_plugin_active( 'gravityforms/gravityforms.php' ) ) {
+	    	return 80;
+	    }
 	}
 
 	/**

@@ -2,13 +2,13 @@
 Contributors: senlin
 Donate link: https://so-wp.com/plugins/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
-Requires at least: 4.7.3
+Requires at least: 4.7.5
 Tested up to: 4.8
 Stable tag: 1.0.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
-Using WP for a company site? Then you should install LEAN WP to make the WordPress front- and back-end suitable for companies.
+Using WP for a company site? Then you should install LEAN WP to make the WordPress front- and back-end more suitable for companies.
 LEAN WP: WordPress for companies, without the bloat!
 
 == Description ==

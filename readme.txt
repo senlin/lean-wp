@@ -13,7 +13,7 @@ LEAN WP: WordPress for companies, without the bloat!
 
 == Description ==
 
-WordPress is getting bloated. And that is especially true if you're using WP to build a company website. 
+The WordPress software is getting bloated. And that is especially true if you're using WP to build a company website. 
 
 Customizer, Distraction Free Writing, Emojis, Embeds, the list keeps getting larger with more nonsense and more bloat. There have been rumors about forking WordPress to have a more business oriented version, but such things are merely talk and will never really get off the ground.
 
@@ -23,11 +23,7 @@ The result is LEAN WP.
 
 == Installation ==
 
-Installing "LEAN WP" can be done either by searching for "LEAN WP" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
-
-1. Download the plugin via WordPress.org
-1. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
-1. Activate the plugin through the 'Plugins' menu in WordPress
+Installing "LEAN WP" can be done either by searching for "LEAN WP" via the "Plugins > Add New" screen in your WordPress dashboard, or by downloading the zipped plugin from WordPress.org and upload it to your site through the 'Plugins > Add New > Upload' screen in your WordPress dashboard. Then activate the plugin through the 'Plugins' menu in WordPress.
 
 == Screenshots ==
 
@@ -45,5 +41,5 @@ This plugin template is designed to help you get started with any new WordPress 
 
 = 1.0.0 =
 
-* 2017-5-11
+* 2017-5-22
 * Initial release

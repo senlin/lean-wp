@@ -161,8 +161,8 @@ class LEAN_WP {
 		// Set different defaults for certain options
 		add_action( 'init', array( $this, 'update_options' ) );
 
-		// Remove contextual help and screen options
-		add_filter( 'screen_options_show_screen', '__return_false' );
+		// Remove contextual help //and screen options
+		//add_filter( 'screen_options_show_screen', '__return_false' );
 		add_filter( 'contextual_help', array( $this, 'remove_contextual_help' ), 999, 3 );
 
 		// Remove admin footer text and WP version

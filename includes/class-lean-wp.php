@@ -66,7 +66,7 @@ class LEAN_WP {
 	 * @access  public
 	 * @since   1.0.0
 	 */
-	//public $assets_url;
+	public $assets_url;
 
 	/**
 	 * Suffix for Javascripts.
@@ -90,7 +90,7 @@ class LEAN_WP {
 		$this->file = $file;
 		$this->dir = dirname( $this->file );
 		//$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
-		//$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $this->file ) ) );
+		$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $this->file ) ) );
 
 		$this->script_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
@@ -102,7 +102,7 @@ class LEAN_WP {
 
 		// Load admin JS & CSS
 		//add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 10, 1 );
-		//add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ), 10, 1 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ), 10, 1 );
 
 		// Load API for generic admin functions
 /*
@@ -129,7 +129,7 @@ class LEAN_WP {
 		remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
 		// removes dashboard widgets and removes certain admin sidebar (sub)menus
-		add_action( 'admin_menu', array( $this, 'edit_admin' ), 11 );
+		add_action( 'admin_menu', array( $this, 'edit_admin' ), 9999 );
 
 		add_action( 'widgets_init', array( $this, 'remove_wp_default_widgets' ) );
 
@@ -186,6 +186,14 @@ class LEAN_WP {
 			if (preg_match( '/author=([0-9]*)/i', $_SERVER[ 'QUERY_STRING' ] ) ) die();
 			add_filter( 'redirect_canonical', array( $this, 'check_enum' ), 10, 2 );
 		}
+
+		wp_update_term(
+			1, 'category', array(
+				'name' => __( 'General', 'lean-wp' ),
+				'slug' => 'general', 
+				'description' => __( 'The default Category for the Posts post type', 'lean-wp' )
+			)
+		);
 
 	} // End __construct ()
 
@@ -259,12 +267,10 @@ class LEAN_WP {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-/*
 	public function admin_enqueue_styles ( $hook = '' ) {
 		wp_register_style( $this->_token . '-admin', esc_url( $this->assets_url ) . 'css/admin.css', array(), $this->_version );
 		wp_enqueue_style( $this->_token . '-admin' );
 	} // End admin_enqueue_styles ()
-*/
 
 	/**
 	 * Load admin Javascript.
@@ -368,6 +374,12 @@ class LEAN_WP {
 		// remove "Header" and "Custom Background" sub-menus from "Appearance"
 		remove_submenu_page( 'themes.php', 'custom-header' );
 		remove_submenu_page( 'themes.php', 'custom-background' );
+		// remove Edit CSS sub-menu from "Appearance" (since WP 4.8)
+		remove_submenu_page( 'themes.php', 'editcss-customizer-redirect' );
+
+		if ( is_plugin_active( 'jetpack/jetpack.php' ) ) {
+			add_submenu_page( 'jetpack', __( 'Old Settings', 'lean-wp' ), __( 'Old Settings', 'lean-wp' ), 'manage_options', 'admin.php?page=jetpack_modules' );
+		}
 
 	}
 

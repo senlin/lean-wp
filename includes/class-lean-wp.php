@@ -198,6 +198,18 @@ class LEAN_WP {
 	} // End __construct ()
 
 	/**
+	 * Wrapper function to register a new dashboard widget
+	 * @param  string $widget_id   Taxonomy name
+	 * @param  string $widget_name     Taxonomy single name
+	 * @param  string $callback  control_callbackpost_types Post types to which this taxonomy applies
+	 * @return object             Dashboard Widget class object
+	 */
+    public function init() {
+        //Register the widget...
+		wp_add_dashboard_widget( 'leanwp-dashboard-widget', esc_html__( 'Site information', 'lean-wp'), array( 'LEAN_WP_Dashboard_Widget', 'widget' ) );
+    }
+
+	/**
 	 * Wrapper function to register a new post type
 	 * @param  string $post_type   Post type name
 	 * @param  string $plural      Post type item plural name
@@ -378,7 +390,7 @@ class LEAN_WP {
 		remove_submenu_page( 'themes.php', 'editcss-customizer-redirect' );
 
 		if ( is_plugin_active( 'jetpack/jetpack.php' ) ) {
-			add_submenu_page( 'jetpack', __( 'Old Settings', 'lean-wp' ), __( 'Old Settings', 'lean-wp' ), 'manage_options', 'admin.php?page=jetpack_modules' );
+			add_submenu_page( 'jetpack', __( 'Lean Settings', 'lean-wp' ), __( 'Lean Settings', 'lean-wp' ), 'manage_options', 'admin.php?page=jetpack_modules' );
 		}
 
 	}

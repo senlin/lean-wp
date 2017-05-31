@@ -1,3 +1,6 @@
 .toplevel_page_jetpack ul.wp-submenu-wrap > li:nth-child(3) {
     display: none;
 }
+#leanwp-dashboard-widget.postbox {
+    background-color: #ffffe0;
+}

@@ -41,6 +41,7 @@ require_once( 'includes/lib/class-lean-wp-disable-embeds.php' );
 require_once( 'includes/lib/class-lean-wp-disable-emojis.php' );
 require_once( 'includes/lib/class-lean-wp-disable-rest-api.php' );
 require_once( 'includes/lib/class-lean-wp-remove-comments-feed-link.php' );
+require_once( 'includes/lib/class-lean-wp-dashboard-widget.php' );
 
 // Load WP_Dependency_Installer
 include_once( __DIR__ . '/vendor/autoload.php' );

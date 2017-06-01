@@ -28,9 +28,15 @@ if (!defined('ABSPATH')) exit;
 		<li><?php esc_html_e( 'Your IP address: ',	'dashboard-widgets-suite' ); echo '<b>' . lwp_get_user_ip() . '</b>'; ?></li>
 	</ul>
 	<p><?php 
-		printf ( __( 'If you would like to control the output and settings, we recommend to purchase %s for only &euro;39 per site.', 'lean-wp' ),
+		printf ( __( 'If you have any questions, please read the documentation first. If that doesn\'t answer your question, you can open an issue on Github.', 'lean-wp' ),
 			__( 'the <b><a href="https://so-wp.com/plugin/lean-wp/#premium" target="_blank">premium version</a></b>', 'lean-wp' )
 		);
+		?>
+	</p>
+	<p><?php /* will be added once we have released the premium version
+		printf ( __( 'If you would like to control the output and settings, we recommend to purchase %s for only &euro;39 per site.', 'lean-wp' ),
+			__( 'the <b><a href="https://so-wp.com/plugin/lean-wp/#premium" target="_blank">premium version</a></b>', 'lean-wp' )
+		); */
 		?>
 	</p>
 	<?php

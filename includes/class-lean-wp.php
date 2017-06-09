@@ -430,9 +430,9 @@ class LEAN_WP {
 	/**
 	 * Reorder Pages, Posts and Media admin menus
 	 *
-	 * * Pages gets position 5
-	 * * Posts gets position 50
-	 * * Media gets position 58 (before separator of Appearance)
+	 * - Pages gets position 5
+	 * - Posts gets position 50
+	 * - Media gets position 58 (before separator of Appearance)
 	 *
 	 * This means that there is ample space to position Custom Post Types
 	 *
@@ -442,12 +442,23 @@ class LEAN_WP {
 	 * @since 1.0.0
 	 */
 	function reorder_pages_posts_media() {
-		global $menu;
-		$menu[50] = $menu[5]; // Posts goes from position 5 to position 50
-		$menu[58] = $menu[10]; // Media goes from position 10 to position 58 (right above Appearance-separator)
-		$menu[5] = $menu[20]; // Pages goes from position 20 to position 5 (originally Posts)
-		unset($menu[10]); //remove Media from original position
-		unset($menu[20]); //remove Pages from original position
+		/**
+		 * plugins that disable blogging do something similar which might be conflicting
+		 * therefore so only execute this function when those plugins are not installed
+		 *
+		 * plugins we know and which we have tested for, are:
+		 * - [Disable Blogging](https://wordpress.org/plugins/disable-blogging/) by Fact Maven
+		 * - [Disable Blog](https://wordpress.org/plugins/disable-blog/) by Joshua Nelson
+		 *
+		 */
+		if ( ! is_plugin_active( 'disable-blogging/disable-blogging.php' ) && ! is_plugin_active( 'disable-blog/disable-blog.php' ) ) {
+			global $menu;
+			$menu[50] = $menu[5]; // Posts goes from position 5 to position 50
+			$menu[58] = $menu[10]; // Media goes from position 10 to position 58 (right above Appearance-separator)
+			$menu[5] = $menu[20]; // Pages goes from position 20 to position 5 (originally Posts)
+			unset($menu[10]); //remove Media from original position
+			unset($menu[20]); //remove Pages from original position
+		}
 	}
 
 	/**

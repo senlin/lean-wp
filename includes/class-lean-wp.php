@@ -121,7 +121,7 @@ class LEAN_WP {
 		 ***/
 
 		// removes redundant items from adminbar
-		add_action( 'admin_bar_menu', array( $this, 'remove_redundant_adminbar' ), 99 );
+		add_action( 'admin_bar_menu', array( $this, 'remove_redundant_items_adminbar' ), 99 );
 
 		add_filter( 'admin_bar_menu', array( $this, 'remove_howdy' ) );
 
@@ -143,7 +143,7 @@ class LEAN_WP {
 
 		// Reorder Pages, Posts and Media
 		add_action( 'admin_menu', array( $this, 'reorder_pages_posts_media' ) );
-		
+
 		// Prevents plugins from injecting themselves as top level menus (example: Jetpack)
 		add_filter( 'custom_menu_order', '__return_true' );
 		add_filter( 'menu_order', array( $this, 'menu_order' ), 99 );
@@ -178,8 +178,8 @@ class LEAN_WP {
 		add_filter( 'the_generator', array( $this, 'remove_wp_version_from_rss' ) );
 
 		// disable author archives
-		add_action( 'template_redirect', array( $this, 'disable_author_archives' ) );
 		remove_filter( 'template_redirect', 'redirect_canonical' );
+		add_action( 'template_redirect', array( $this, 'disable_author_archives' ) );
 
 		if ( ! is_admin() ) {
 			// default URL format
@@ -190,7 +190,7 @@ class LEAN_WP {
 		wp_update_term(
 			1, 'category', array(
 				'name' => __( 'General', 'lean-wp' ),
-				'slug' => 'general', 
+				'slug' => 'general',
 				'description' => __( 'The default Category for the Posts post type', 'lean-wp' )
 			)
 		);
@@ -312,7 +312,7 @@ class LEAN_WP {
 	 *
 	 * @since 1.0.0
 	 */
-	public function remove_redundant_adminbar( $wp_admin_bar ) {
+	public function remove_redundant_items_adminbar( $wp_admin_bar ) {
 
 		global $wp_admin_bar;
 
@@ -327,7 +327,7 @@ class LEAN_WP {
 		$wp_admin_bar->remove_node( 'new-content' );
 
 		// remove Comments
-		$wp_admin_bar->remove_node( 'comments' );    
+		$wp_admin_bar->remove_node( 'comments' );
 
 		// remove plugin updates count
 		$wp_admin_bar->remove_node( 'updates' );
@@ -336,7 +336,7 @@ class LEAN_WP {
 		// remove Dashboard link
 		$wp_admin_bar->remove_node( 'dashboard' );
 
-		// remove Themes, Widgets, Menus, Header links 
+		// remove Themes, Widgets, Menus, Header links
 		$wp_admin_bar->remove_node( 'appearance' );
 	}
 
@@ -526,7 +526,7 @@ class LEAN_WP {
 		// Turn off Gravatars (in Dashboard and for comments)
 		update_option( 'show_avatars', 0 );
 
-		// Uncheck boxes Settings > Discussion: Default article settings 
+		// Uncheck boxes Settings > Discussion: Default article settings
 		update_option( 'default_pingback_flag', 0 );
 		update_option( 'default_ping_status', 0 );
 	}
@@ -539,7 +539,7 @@ class LEAN_WP {
 	public function remove_contextual_help( $old_help, $screen_id, $screen ) {
 	    $screen->remove_help_tabs();
 	    return $old_help;
-	}	
+	}
 
 	/**
 	 * WP_HEAD Cleanup.

@@ -2,10 +2,10 @@
 
 <!-- [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp) -->
 
-###### Last updated on 2017.4.12
-###### Development version 0.0.1
+###### Last updated on 2017.8.1
+###### Development version 0.0.5
 ###### requires at least WordPress 4.3
-###### tested up to WordPress 4.7
+###### tested up to WordPress 4.8
 ###### Author: [Piet Bos](https://github.com/senlin)
 
 Using WP for a company site? Then you should install LEAN WP to make the WordPress front- and back-end suitable for companies.

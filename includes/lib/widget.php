@@ -15,10 +15,10 @@ if (!defined('ABSPATH')) exit;
 
 ?>
 
-	<p><?php 
+	<p><?php
 		printf ( __( 'The backend of the <b>%1$s</b> website has been simplified and optimised for company use by %2$s.', 'lean-wp' ),
 			esc_attr( get_bloginfo( 'name' ) ),
-			__( 'the <b><a href="https://wordpress.org/plugins/lean-wp/" target="_blank">LEAN WP</a></b> plugin', 'lean-wp' )
+			__( 'the <b><a href="https://wordpress.org/plugins/lean-wp/" target="_blank">Lean WP</a></b> plugin', 'lean-wp' )
 		);
 		?>
 	</p>
@@ -27,9 +27,11 @@ if (!defined('ABSPATH')) exit;
 		<li><?php esc_html_e( 'Active theme: ',		'dashboard-widgets-suite' ); lwp_get_theme_info(); ?></li>
 		<li><?php esc_html_e( 'Your IP address: ',	'dashboard-widgets-suite' ); echo '<b>' . lwp_get_user_ip() . '</b>'; ?></li>
 	</ul>
-	<p><?php 
-		printf ( __( 'If you have any questions, please read the documentation first. If that doesn\'t answer your question, you can open an issue on Github.', 'lean-wp' ),
-			__( 'the <b><a href="https://so-wp.com/plugin/lean-wp/#premium" target="_blank">premium version</a></b>', 'lean-wp' )
+	<p><?php
+		printf ( __( 'If you have any questions, please read the <a href="%1$s" target="_blank"><strong>documentation</strong></a> first. If that doesn\'t answer your question, you can open an issue on <a href="%2$s" target="_blank"><strong>Github</strong></a>.', 'lean-wp' ),
+			'https://so-wp.com/lean-wp-docs/',
+			'https://github.com/senlin/lean-wp/issues/new'
+// 			__( 'the <b><a href="https://so-wp.com/plugin/lean-wp/#premium" target="_blank">premium version</a></b>', 'lean-wp' )
 		);
 		?>
 	</p>

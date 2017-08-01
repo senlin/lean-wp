@@ -7,6 +7,7 @@
 ###### requires at least WordPress 4.3
 ###### tested up to WordPress 4.8
 ###### Author: [Piet Bos](https://github.com/senlin)
+###### [Documentation](https://so-wp.com/lean-wp-docs/)
 
 Using WP for a company site? Then you should install LEAN WP to make the WordPress front- and back-end suitable for companies.
 LEAN WP: WordPress for companies, without the bloat!

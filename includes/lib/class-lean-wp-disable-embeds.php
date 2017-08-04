@@ -91,7 +91,7 @@ function lwp_disable_embeds_remove_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
-register_activation_hook( __FILE__, 'lwp_disable_embeds_remove_rewrite_rules' );
+//register_activation_hook( __FILE__, 'lwp_disable_embeds_remove_rewrite_rules' );
 
 /**
  * Flush rewrite rules on plugin deactivation.
@@ -103,4 +103,4 @@ function lwp_disable_embeds_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
-register_deactivation_hook( __FILE__, 'lwp_disable_embeds_flush_rewrite_rules' );
+//register_deactivation_hook( __FILE__, 'lwp_disable_embeds_flush_rewrite_rules' );

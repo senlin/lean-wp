@@ -123,6 +123,7 @@ class LEAN_WP {
 		// removes redundant items from adminbar
 		add_action( 'admin_bar_menu', array( $this, 'remove_redundant_items_adminbar' ), 99 );
 
+		// removes howdy "greeting"
 		add_filter( 'admin_bar_menu', array( $this, 'remove_howdy' ) );
 
 		// remove welcome panel
@@ -131,6 +132,7 @@ class LEAN_WP {
 		// removes dashboard widgets and removes certain admin sidebar (sub)menus
 		add_action( 'admin_menu', array( $this, 'edit_admin' ), 9999 );
 
+		// removes a number of default widgets
 		add_action( 'widgets_init', array( $this, 'remove_wp_default_widgets' ) );
 
 		// Disable XML-RPC - //plugins.svn.wordpress.org/disable-xml-rpc/tags/1.0.1/disable-xml-rpc.php
@@ -177,6 +179,10 @@ class LEAN_WP {
 		// remove WP version from RSS
 		add_filter( 'the_generator', array( $this, 'remove_wp_version_from_rss' ) );
 
+		// remove all meta generators
+		add_action( 'get_header', array( $this, 'clean_meta_generators' ), 100 );
+		add_action( 'wp_footer', function() { ob_end_flush(); }, 100 );
+
 		// disable author archives
 		remove_filter( 'template_redirect', 'redirect_canonical' );
 		add_action( 'template_redirect', array( $this, 'disable_author_archives' ) );
@@ -187,6 +193,7 @@ class LEAN_WP {
 			add_filter( 'redirect_canonical', array( $this, 'check_enum' ), 10, 2 );
 		}
 
+		// change default category name
 		wp_update_term(
 			1, 'category', array(
 				'name' => __( 'General', 'lean-wp' ),
@@ -571,18 +578,39 @@ class LEAN_WP {
 		// wp shortlink
 		remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-		// WP version
-		remove_action( 'wp_head', 'wp_generator' );
-
 	} // end clean_head()
 
 	/**
 	 * Remove WP version from RSS.
 	 *
+	 * @source: //
+	 *
 	 * @since 1.0.0
 	 */
 	public function remove_wp_version_from_rss() {
 		return '';
+	}
+
+	/**
+	 * Remove all meta generators.
+	 *
+	 * @source: //stackoverflow.com/a/42380747/1381553
+	 *
+	 * @since 1.0.0
+	 */
+	public function remove_meta_generators( $html ) {
+
+	    $pattern = '/<meta name(.*)=(.*)"generator"(.*)>/i';
+
+	    $html = preg_replace( $pattern, '', $html );
+
+	    return $html;
+
+	}
+	public function clean_meta_generators( $html ) {
+
+		ob_start( 'remove_meta_generators' );
+
 	}
 
 	/**

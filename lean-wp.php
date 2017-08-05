@@ -3,7 +3,7 @@
  * Plugin Name: 		Lean WP
  * Version:     		1.0.0
  * Plugin URI:  		https://so-wp.com/plugin/lean-wp/
- * Description:			Lean WP: WordPress for company websites, without the bloat!
+ * Description:			Lean WP does a great job cleaning up the WordPress backend (Dashboard) and frontend!
  * Network:     		true
 
  * Author:				SO WP

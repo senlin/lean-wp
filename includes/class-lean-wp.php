@@ -187,6 +187,7 @@ class LEAN_WP {
 		remove_filter( 'template_redirect', 'redirect_canonical' );
 		add_action( 'template_redirect', array( $this, 'disable_author_archives' ) );
 
+		// block user-enumeration
 		if ( ! is_admin() ) {
 			// default URL format
 			if (preg_match( '/author=([0-9]*)/i', $_SERVER[ 'QUERY_STRING' ] ) ) die();
@@ -469,7 +470,8 @@ class LEAN_WP {
 	}
 
 	/**
-	 * Prevents plugins from injecting themselves as top level menus (example: Jetpack)
+	 * Prevents plugins - for example Jetpack - from injecting themselves in the top part
+	 * of the admin sidebar menu, right under "Dashboard"
 	 *
 	 * @source: based on Menu Humility plugin - //wordpress.org/plugins/menu-humility/
 	 *
@@ -479,21 +481,25 @@ class LEAN_WP {
 
 		if ( ! $menu ) return true;
 
-		$penalty_box = array();
+		$plugins_area = array();
 
 		foreach ( $menu as $key => $item ) {
+
 			if ( 'separator1' == $item ) {
-				// Have reached the content area. We're done.
+
 				break;
+
 			} elseif ( 'index.php' !== $item ) {
-				// Yank it out and put it in the penalty box.
-				$penalty_box[] = $item;
+
+				// remove it and put it in the plugins area instead
+				$plugins_area[] = $item;
+
 				unset( $menu[$key] );
 			}
 		}
 
-		// Shove the penalty box items onto the end
-		return array_merge( $menu, $penalty_box );
+		// Move the items in the plugins area to the end of the menu
+		return array_merge( $menu, $plugins_area );
 
 	}
 
@@ -563,15 +569,6 @@ class LEAN_WP {
 		// windows live writer
 		remove_action( 'wp_head', 'wlwmanifest_link' );
 
-		// index link
-		remove_action( 'wp_head', 'index_rel_link' );
-
-		// previous link
-		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-
-		// start link
-		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-
 		// links for adjacent posts
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 
@@ -630,7 +627,7 @@ class LEAN_WP {
 		}
 	}
 	/**
-	 * Block WP enum scans.
+	 * Block WP enum scans (user-enumeration).
 	 *
 	 * @source: //perishablepress.com/stop-user-enumeration-wordpress/
 	 *

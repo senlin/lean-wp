@@ -1,4 +1,4 @@
-# LEAN WP
+# Lean WP
 
 <!-- [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp) -->
 
@@ -9,8 +9,8 @@
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs/)
 
-Using WP for a company site? Then you should install LEAN WP to make the WordPress front- and back-end suitable for companies.
-LEAN WP: WordPress for companies, without the bloat!
+Using WP for a company site? Then you should install Lean WP to make the WordPress front- and back-end suitable for companies.
+Lean WP: WordPress for companies, without the bloat!
 
 ## Description
 
@@ -20,4 +20,4 @@ Customizer, Distraction Free Writing, Emojis, Embeds, the list keeps getting lar
 
 The better way in our opinion is to use the WP infrastructure and to simply remove all the unwanted things by using actions and filters.
 
-The result is LEAN WP.
+The result is Lean WP.

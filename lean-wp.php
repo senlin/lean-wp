@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: 		LEAN WP
+ * Plugin Name: 		Lean WP
  * Version:     		1.0.0
  * Plugin URI:  		https://so-wp.com/plugin/lean-wp/
- * Description:			LEAN WP: WordPress for company websites, without the bloat!
+ * Description:			Lean WP: WordPress for company websites, without the bloat!
  * Network:     		true
 
  * Author:				SO WP

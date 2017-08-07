@@ -176,12 +176,25 @@ class LEAN_WP {
 		 ***/
 		add_action( 'init', array( $this, 'clean_head' ) );
 
-		// remove WP version from RSS
+		// remove WP version from RSS, styles and scripts
 		add_filter( 'the_generator', array( $this, 'remove_wp_version_from_rss' ) );
+
+		// remove WP version from enqueued styles and scripts
+		add_filter( 'style_loader_src', array( $this, 'remove_wp_version_styles_scripts' ) );
+		add_filter( 'script_loader_src', array( $this, 'remove_wp_version_styles_scripts' ) );
 
 		// remove all meta generators
 		add_action( 'get_header', array( $this, 'clean_meta_generators' ), 100 );
 		add_action( 'wp_footer', function() { ob_end_flush(); }, 100 );
+
+		// set default display name new user registrations to first_name last_name
+		add_action( 'user_register', array( $this, 'set_default_display_name' ) );
+
+		// changing the author URL
+		// handle incoming links with the author first_name instead of the author slug
+		// generate author post urls with the first_name instead of the standard slug
+		add_filter( 'request', array ( $this, 'author_firstname_request' ) );
+		add_filter( 'author_link', array ( $this, 'sitename_author_link' ), 10, 3 );
 
 		// disable author archives
 		remove_filter( 'template_redirect', 'redirect_canonical' );
@@ -580,12 +593,21 @@ class LEAN_WP {
 	/**
 	 * Remove WP version from RSS.
 	 *
-	 * @source: //
-	 *
 	 * @since 1.0.0
 	 */
 	public function remove_wp_version_from_rss() {
 		return '';
+	}
+
+	/**
+	 * Remove WP version from enqueued styles and scripts.
+	 *
+	 * @since 1.0.0
+	 */
+	function remove_wp_version_styles_scripts( $src ) {
+	    if ( strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) )
+	        $src = remove_query_arg( 'ver', $src );
+	    return $src;
 	}
 
 	/**
@@ -606,8 +628,74 @@ class LEAN_WP {
 	}
 	public function clean_meta_generators( $html ) {
 
-		ob_start( 'remove_meta_generators' );
+		ob_start( array( $this, 'remove_meta_generators' ) );
 
+	}
+
+	/**
+	 * Set default display name New User Registrations to first_name last_name
+	 * or to site name if first name is not filled in
+	 *
+	 * Best used on 'user_register'
+	 * @param int $user_id The user ID
+	 * @return void
+	 * @uses get_userdata()
+	 * @uses wp_update_user()
+	 *
+	 * @source: //stevegrunwell.com/blog/quick-tip-set-the-default-display-name-for-wordpress-users/
+	 */
+	public function set_default_display_name( $user_id ) {
+
+		$user = get_userdata( $user_id );
+
+		if ( ! empty ( $user->first_name ) ) {
+			// if first_name field is not empty set display name to first_name last_name
+			$name = sprintf( '%s %s', $user->first_name, $user->last_name );
+		} else {
+			// if first_name field is empty set display name to site name
+			$name = get_bloginfo( 'name' );
+		}
+
+		$args = array(
+			'ID' => $user_id,
+			'display_name' => $name,
+			'nickname' => $name
+		);
+
+		wp_update_user( $args );
+	}
+
+	/**
+	 * Changing the author URL
+	 *
+	 * handle incoming links with the author first_name instead of the author slug
+	 *
+	 * @source: //wordpress.stackexchange.com/a/6527/2015 (adapted to use first_name instead of nickname)
+	 */
+	public function author_firstname_request( $query_vars ) {
+	    if ( array_key_exists( 'author_name', $query_vars ) ) {
+	        global $wpdb;
+	        $author_id = $wpdb->get_var( $wpdb->prepare( "SELECT user_id FROM {$wpdb->usermeta} WHERE meta_key='first_name' AND meta_value = %s", $query_vars['author_name'] ) );
+	        if ( $author_id ) {
+	            $query_vars['author'] = $author_id;
+	            unset( $query_vars['author_name'] );
+	        }
+	    }
+	    return $query_vars;
+	}
+
+	/**
+	 * Changing the author URL
+	 *
+	 * generate author post urls with the sitename instead of the standard username-slug
+	 *
+	 * @source: //wordpress.stackexchange.com/a/6527/2015 (adapted to use sitename instead of nickname)
+	 */
+	public function sitename_author_link( $link, $author_id, $author_nicename ) {
+
+	    $link = str_replace( $author_nicename, get_bloginfo( 'name' ), $link );
+
+	    return $link;
 	}
 
 	/**

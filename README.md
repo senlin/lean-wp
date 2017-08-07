@@ -23,13 +23,13 @@ In the past new features were added to WordPress using the 80/20-rule, which mea
 
 > The core of WordPress will always provide a solid array of basic features. It’s designed to be lean and fast and will always stay that way. [...] The rule of thumb is that the core should provide features that 80% or more of end users will actually appreciate and use. If the next version of WordPress comes with a feature that the majority of users immediately want to turn off, or think they’ll never use, then we’ve blown it. If we stick to the 80% principle then this should never happen.
 
-<cite>[WordPress.org Philosophy page](https://wordpress.org/about/philosophy/)</cite>
+_[WordPress.org Philosophy page](https://wordpress.org/about/philosophy/)_
 
 Well, WordPress no longer is Clean and certainly not Lean and in terms of those, the future is not looking very bright. Matt Mullenweg even has hinted that the 80/20-rule is no longer.
 
 > It might be time to retire 80/20 from the philosophy page, as it is seldom used as intended.
 
-<cite>Matt Mullenweg · March 31, 2017 at 8:15 PM on WP Tavern in a [discussion](https://wptavern.com/wordpress-plugin-directory-redesign-why-so-many-people-feel-their-feedback-was-ignored/#comment-216989) on the redesign of the Plugins Directory</cite>
+_Matt Mullenweg · March 31, 2017 at 8:15 PM on WP Tavern in a [discussion](https://wptavern.com/wordpress-plugin-directory-redesign-why-so-many-people-feel-their-feedback-was-ignored/#comment-216989) on the redesign of the Plugins Directory_
 
 Over the past few releases a long list of unwanted things have been added to Core and unfortunately the end is nowhere near (the Gutenberg project is in full swing at the time of writing this).
 

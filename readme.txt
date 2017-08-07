@@ -60,9 +60,7 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/welcome/instal
 
 == Screenshots ==
 
-1. Description of first screenshot named screenshot-1
-2. Description of second screenshot named screenshot-2
-3. Description of third screenshot named screenshot-3
+Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/screenshots) for all screenshots.
 
 == Frequently Asked Questions ==
 
@@ -73,5 +71,5 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 = 1.0.0 =
 
-* 2017-8-xx
-* Initial release
+* August 2017
+* Release version

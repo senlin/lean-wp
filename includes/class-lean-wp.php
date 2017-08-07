@@ -13,28 +13,12 @@ class LEAN_WP {
 	private static $_instance = null;
 
 	/**
-	 * Settings class object
-	 * @var     object
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	//public $settings = null;
-
-	/**
 	 * The version number.
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
 	 */
 	public $version;
-
-	/**
-	 * The token.
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	//public $_token;
 
 	/**
 	 * The main plugin file.
@@ -53,28 +37,12 @@ class LEAN_WP {
 	public $dir;
 
 	/**
-	 * The plugin assets directory.
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	//public $assets_dir;
-
-	/**
 	 * The plugin assets URL.
 	 * @var     string
 	 * @access  public
 	 * @since   1.0.0
 	 */
 	public $assets_url;
-
-	/**
-	 * Suffix for Javascripts.
-	 * @var     string
-	 * @access  public
-	 * @since   1.0.0
-	 */
-	//public $script_suffix;
 
 	/**
 	 * Constructor function.
@@ -89,27 +57,14 @@ class LEAN_WP {
 		// Load plugin environment variables
 		$this->file = $file;
 		$this->dir = dirname( $this->file );
-		//$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
 		$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $this->file ) ) );
 
 		$this->script_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		register_activation_hook( $this->file, array( $this, 'install' ) );
 
-		// Load frontend JS & CSS
-		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ), 10 );
-		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 10 );
-
-		// Load admin JS & CSS
-		//add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ), 10, 1 );
+		// Load admin CSS
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_styles' ), 10, 1 );
-
-		// Load API for generic admin functions
-/*
-		if ( is_admin() ) {
-			$this->admin = new LEAN_WP_Admin_API();
-		}
-*/
 
 		// Handle localisation
 		add_action( 'plugins_loaded', array( $this, 'i18n' ), 0 );
@@ -164,7 +119,6 @@ class LEAN_WP {
 		add_action( 'init', array( $this, 'update_options' ) );
 
 		// Remove contextual help //and screen options
-		//add_filter( 'screen_options_show_screen', '__return_false' );
 		add_filter( 'contextual_help', array( $this, 'remove_contextual_help' ), 999, 3 );
 
 		// Remove admin footer text and WP version
@@ -231,70 +185,6 @@ class LEAN_WP {
     }
 
 	/**
-	 * Wrapper function to register a new post type
-	 * @param  string $post_type   Post type name
-	 * @param  string $plural      Post type item plural name
-	 * @param  string $single      Post type item single name
-	 * @param  string $description Description of post type
-	 * @return object              Post type class object
-	 */
-/*
-	public function register_post_type ( $post_type = '', $plural = '', $single = '', $description = '', $options = array() ) {
-
-		if ( ! $post_type || ! $plural || ! $single ) return;
-
-		$post_type = new LEAN_WP_Post_Type( $post_type, $plural, $single, $description, $options );
-
-		return $post_type;
-	}
-*/
-
-	/**
-	 * Wrapper function to register a new taxonomy
-	 * @param  string $taxonomy   Taxonomy name
-	 * @param  string $plural     Taxonomy single name
-	 * @param  string $single     Taxonomy plural name
-	 * @param  array  $post_types Post types to which this taxonomy applies
-	 * @return object             Taxonomy class object
-	 */
-/*
-	public function register_taxonomy ( $taxonomy = '', $plural = '', $single = '', $post_types = array(), $taxonomy_args = array() ) {
-
-		if ( ! $taxonomy || ! $plural || ! $single ) return;
-
-		$taxonomy = new LEAN_WP_Taxonomy( $taxonomy, $plural, $single, $post_types, $taxonomy_args );
-
-		return $taxonomy;
-	}
-*/
-
-	/**
-	 * Load frontend CSS.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return void
-	 */
-/*
-	public function enqueue_styles () {
-		wp_register_style( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'css/frontend.css', array(), $this->_version );
-		wp_enqueue_style( $this->_token . '-frontend' );
-	} // End enqueue_styles ()
-*/
-
-	/**
-	 * Load frontend Javascript.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-/*
-	public function enqueue_scripts () {
-		wp_register_script( $this->_token . '-frontend', esc_url( $this->assets_url ) . 'js/frontend' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version );
-		wp_enqueue_script( $this->_token . '-frontend' );
-	} // End enqueue_scripts ()
-*/
-
-	/**
 	 * Load admin CSS.
 	 * @access  public
 	 * @since   1.0.0
@@ -304,19 +194,6 @@ class LEAN_WP {
 		wp_register_style( $this->_token . '-admin', esc_url( $this->assets_url ) . 'css/admin.css', array(), $this->_version );
 		wp_enqueue_style( $this->_token . '-admin' );
 	} // End admin_enqueue_styles ()
-
-	/**
-	 * Load admin Javascript.
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-/*
-	public function admin_enqueue_scripts ( $hook = '' ) {
-		wp_register_script( $this->_token . '-admin', esc_url( $this->assets_url ) . 'js/admin' . $this->script_suffix . '.js', array( 'jquery' ), $this->_version );
-		wp_enqueue_script( $this->_token . '-admin' );
-	} // End admin_enqueue_scripts ()
-*/
 
 	/**
 	 * Loads the translation file.
@@ -435,7 +312,6 @@ class LEAN_WP {
 		unregister_widget( 'WP_Widget_Tag_Cloud' );
 
 	}
-
 
 	/**
 	 * Disable scroll-free editor.

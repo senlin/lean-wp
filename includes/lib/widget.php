@@ -31,14 +31,7 @@ if (!defined('ABSPATH')) exit;
 		printf ( __( 'If you have any questions, please read the <a href="%1$s" target="_blank"><strong>documentation</strong></a> first. If that doesn\'t answer your question, you can open an issue on <a href="%2$s" target="_blank"><strong>Github</strong></a>.', 'lean-wp' ),
 			'https://so-wp.com/lean-wp-docs/',
 			'https://github.com/senlin/lean-wp/issues/new'
-// 			__( 'the <b><a href="https://so-wp.com/plugin/lean-wp/#premium" target="_blank">premium version</a></b>', 'lean-wp' )
 		);
-		?>
-	</p>
-	<p><?php /* will be added once we have released the premium version
-		printf ( __( 'If you would like to control the output and settings, we recommend to purchase %s for only &euro;39 per site.', 'lean-wp' ),
-			__( 'the <b><a href="https://so-wp.com/plugin/lean-wp/#premium" target="_blank">premium version</a></b>', 'lean-wp' )
-		); */
 		?>
 	</p>
 	<?php

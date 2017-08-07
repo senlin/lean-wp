@@ -30,12 +30,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Load plugin class files
 require_once( 'includes/class-lean-wp.php' );
-//require_once( 'includes/class-lean-wp-settings.php' );
 
 // Load plugin libraries
-//require_once( 'includes/lib/class-lean-wp-admin-api.php' );
-//require_once( 'includes/lib/class-lean-wp-post-type.php' );
-//require_once( 'includes/lib/class-lean-wp-taxonomy.php' );
 require_once( 'includes/lib/class-lean-wp-comments2posts.php' );
 require_once( 'includes/lib/class-lean-wp-disable-embeds.php' );
 require_once( 'includes/lib/class-lean-wp-disable-emojis.php' );
@@ -55,12 +51,6 @@ WP_Dependency_Installer::instance()->run( __DIR__ );
  */
 function LEAN_WP () {
 	$instance = LEAN_WP::instance( __FILE__, '1.0.0' );
-
-/*
-	if ( is_null( $instance->settings ) ) {
-		$instance->settings = LEAN_WP_Settings::instance( $instance );
-	}
-*/
 
 }
 

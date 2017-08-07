@@ -56,7 +56,7 @@ There are various plugins that take care of a few or more items on the list abov
 
 == Installation ==
 
-Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/welcome/installation) for detailed instructions.
+Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/start/installation) for detailed instructions.
 
 == Screenshots ==
 

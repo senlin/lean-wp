@@ -192,7 +192,7 @@ class LEAN_WP {
 
 		// changing the author URL
 		// handle incoming links with the author first_name instead of the author slug
-		// generate author post urls with the first_name instead of the standard slug
+		// generate author post urls with the sitename instead of the standard username-slug
 		add_filter( 'request', array ( $this, 'author_firstname_request' ) );
 		add_filter( 'author_link', array ( $this, 'sitename_author_link' ), 10, 3 );
 

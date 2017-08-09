@@ -2,8 +2,8 @@
 Contributors: senlin
 Donate link: https://so-wp.com/plugins/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
-Requires at least: 4.7.5
-Tested up to: 4.8
+Requires at least: 4.8
+Tested up to: 4.9-alpha
 Stable tag: 1.0.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -54,6 +54,8 @@ Last but not least there are the usual frustrations that seem impossible to deal
 
 There are various plugins that take care of a few or more items on the list above, but to be honest we were getting tired of having to install 5-10 different plugins to bend WordPress into submission. The Lean WP plugin therefore is a collection of functions, hooks and filters to target all of our frustrations.
 
+For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
+
 == Installation ==
 
 Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/start/installation) for detailed instructions.
@@ -71,5 +73,5 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 = 1.0.0 =
 
-* August 2017
+* August 9, 2017
 * Release version

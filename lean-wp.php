@@ -9,8 +9,8 @@
  * Author:				SO WP
  * Author URI:  		https://so-wp.com/plugins/
 
- * Requires at least:	4.7
- * Tested up to:		4.8
+ * Requires at least:	4.8
+ * Tested up to:		4.9-alpha
 
  * License:    			GPL-3.0+
  * License URI:			http://www.gnu.org/licenses/gpl-3.0.txt

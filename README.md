@@ -1,11 +1,11 @@
 # Lean WP
 
-<!-- [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp) -->
+[![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
 ###### Last updated on 2017.8.7
-###### Development version 1.0.0-rc001
-###### requires at least WordPress 4.3
-###### tested up to WordPress 4.8
+###### Development version 1.0.0
+###### requires at least WordPress 4.8
+###### tested up to WordPress 4.9-alpha
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs/)
 
@@ -54,3 +54,5 @@ Last but not least there are the usual frustrations that seem impossible to deal
 * changing the order of Pages and Posts in the sidebar menu of the WP Dashboard.
 
 There are various plugins that take care of a few or more items on the list above, but to be honest we were getting tired of having to install 5-10 different plugins to bend WordPress into submission. The Lean WP plugin therefore is a collection of functions, hooks and filters to target all of our frustrations.
+
+For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.

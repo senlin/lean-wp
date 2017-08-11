@@ -50,7 +50,7 @@ class LEAN_WP {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.0.0' ) {
+	public function __construct ( $file = '', $version = '1.0.1' ) {
 		$this->_version = $version;
 		$this->_token = 'lean_wp';
 
@@ -162,13 +162,18 @@ class LEAN_WP {
 		}
 
 		// change default category name
-		wp_update_term(
-			1, 'category', array(
-				'name' => __( 'General', 'lean-wp' ),
-				'slug' => 'general',
-				'description' => __( 'The default Category for the Posts post type', 'lean-wp' )
-			)
-		);
+		// @modified 1.0.1 - add check if Uncategorized term_exists
+		$term = term_exists( 'Uncategorized', 'category' );
+		if ( $term !== 0 && $term !== null ) {
+			wp_update_term(
+
+				1, 'category', array(
+					'name' => __( 'General', 'lean-wp' ),
+					'slug' => 'general',
+					'description' => __( 'The default Category for the Posts post type', 'lean-wp' )
+				)
+			);
+		}
 
 	} // End __construct ()
 
@@ -613,7 +618,7 @@ class LEAN_WP {
 	 * @see LEAN_WP()
 	 * @return Main LEAN_WP instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.0' ) {
+	public static function instance ( $file = '', $version = '1.0.1' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}

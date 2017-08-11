@@ -56,3 +56,16 @@ Last but not least there are the usual frustrations that seem impossible to deal
 There are various plugins that take care of a few or more items on the list above, but to be honest we were getting tired of having to install 5-10 different plugins to bend WordPress into submission. The Lean WP plugin therefore is a collection of functions, hooks and filters to target all of our frustrations.
 
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
+
+## Changelog
+
+### 1.0.1
+
+* August 11, 2017
+* add condition that checks if Uncategorized category exists. If it doesn't then the default category name change does not happen. Fix [issue #4](https://github.com/senlin/lean-wp/issues/4)
+* add changelog to this README.md file
+
+### 1.0.0
+
+* August 9, 2017
+* Release version

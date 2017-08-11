@@ -4,7 +4,7 @@ Donate link: https://so-wp.com/plugins/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
 Tested up to: 4.9-alpha
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -70,6 +70,11 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 
 == Changelog ==
+
+= 1.0.1 =
+
+* August 11, 2017
+* add condition that checks if Uncategorized category exists. If it doesn't then the default category name change does not happen. Fix [issue #4](https://github.com/senlin/lean-wp/issues/4)
 
 = 1.0.0 =
 

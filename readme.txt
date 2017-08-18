@@ -4,7 +4,7 @@ Donate link: https://so-wp.com/plugins/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
 Tested up to: 4.9-alpha
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -71,6 +71,12 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 == Changelog ==
 
+= 1.1.0 =
+
+* August 18, 2017
+* remove Howdy greeting altogether, because other languages was (of course) still showing up. Fixes [issue #2](https://github.com/senlin/lean-wp/issues/2)
+* make installation of additional plugins optional instead of required. Fixes [issue #5](https://github.com/senlin/lean-wp/issues/5)
+
 = 1.0.1 =
 
 * August 11, 2017
@@ -80,3 +86,9 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 * August 9, 2017
 * Release version
+
+== Upgrade Notice ==
+
+= 1.1.0 =
+
+If you are updating Lean WP you will see that the Customizer Remove All Parts and Move Site Icon To Settings plugins now can be deactivated. This adds a bit of the requested customization (pun intended) to Lean WP.

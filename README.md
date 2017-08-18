@@ -2,8 +2,8 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on 2017.8.9
-###### Development version 1.0.0
+###### Last updated on 2017.8.18
+###### Development version 1.1.0
 ###### requires at least WordPress 4.8
 ###### tested up to WordPress 4.9-alpha
 ###### Author: [Piet Bos](https://github.com/senlin)
@@ -58,6 +58,12 @@ There are various plugins that take care of a few or more items on the list abov
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
 
 ## Changelog
+
+### 1.1.0
+
+* August 18, 2017
+* remove Howdy greeting altogether, because other languages was (of course) still showing up. Fixes [issue #2](https://github.com/senlin/lean-wp/issues/2)
+* make installation of additional plugins optional instead of required. Fixes [issue #5](https://github.com/senlin/lean-wp/issues/5)
 
 ### 1.0.1
 

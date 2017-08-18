@@ -50,7 +50,7 @@ class LEAN_WP {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.0.1' ) {
+	public function __construct ( $file = '', $version = '1.1.0' ) {
 		$this->_version = $version;
 		$this->_token = 'lean_wp';
 
@@ -619,7 +619,7 @@ class LEAN_WP {
 	 * @see LEAN_WP()
 	 * @return Main LEAN_WP instance
 	 */
-	public static function instance ( $file = '', $version = '1.0.1' ) {
+	public static function instance ( $file = '', $version = '1.1.0' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}

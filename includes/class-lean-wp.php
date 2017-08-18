@@ -247,11 +247,12 @@ class LEAN_WP {
 	 * Remove Howdy.
 	 *
 	 * @since 1.0.0
+	 * @modified 1.1.0
 	 */
 	public function remove_howdy( $wp_admin_bar ) {
 
 	    $my_account = $wp_admin_bar->get_node( 'my-account' );
-	    $newtitle = str_replace( 'Howdy,', '', $my_account->title );
+	    $newtitle = '';
 	    $wp_admin_bar->add_node(
 	    	array(
 	        	'id' => 'my-account',

@@ -178,7 +178,7 @@ if ( ! class_exists( 'WP_Dependency_Installer' ) ) {
 						$this->notices[] = array(
 							'action' => 'activate',
 							'slug'   => $slug,
-							'text'   => sprintf( __( 'Please activate the %s plugin.' ), $dependency['name'] ),
+							'text'   => sprintf( __( 'To make the most of the Lean WP plugin, activating the %s plugin is highly recommended.' ), $dependency['name'] ),
 						);
 
 					} else {
@@ -189,7 +189,7 @@ if ( ! class_exists( 'WP_Dependency_Installer' ) ) {
 					$this->notices[] = array(
 						'action' => 'install',
 						'slug'   => $slug,
-						'text'   => sprintf( __( 'The %s plugin is required.' ), $dependency['name'] ),
+						'text'   => sprintf( __( 'To make the most of the Lean WP plugin, installing and activating the %s plugin is highly recommended.' ), $dependency['name'] ),
 					);
 				} else {
 					$this->notices[] = $this->install( $slug );

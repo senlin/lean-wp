@@ -375,7 +375,7 @@ if ( ! class_exists( 'WP_Dependency_Installer' ) ) {
 					$message = esc_html( $notice['message'] );
 				}
 				$dismissible = isset( $notice['slug'] )
-					? 'dependency-installer-' . dirname( $notice['slug'] ) . '-7'
+					? 'dependency-installer-' . dirname( $notice['slug'] ) . 'forever'
 					: null;
 				if ( class_exists( '\PAnd' ) && ! \PAnD::is_admin_notice_active( $dismissible ) ) {
 					continue;

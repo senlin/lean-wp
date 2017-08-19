@@ -4,7 +4,7 @@ Donate link: https://so-wp.com/plugins/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
 Tested up to: 4.9-alpha
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -70,6 +70,12 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 
 == Changelog ==
+
+= 1.1.1 =
+
+* August 19, 2017
+* Fix issue with Dismissible Notice of WP Dependency Installer, [issue #5](https://github.com/senlin/lean-wp/issues/5#issuecomment-323379646)
+* Set dismissible period from one week to forever
 
 = 1.1.0 =
 

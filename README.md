@@ -2,8 +2,8 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on 2017.8.18
-###### Development version 1.1.0
+###### Last updated on 2017.8.19
+###### Development version 1.1.1
 ###### requires at least WordPress 4.8
 ###### tested up to WordPress 4.9-alpha
 ###### Author: [Piet Bos](https://github.com/senlin)
@@ -58,6 +58,12 @@ There are various plugins that take care of a few or more items on the list abov
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
 
 ## Changelog
+
+### 1.1.1
+
+* August 19, 2017
+* Fix issue with Dismissible Notice of WP Dependency Installer, [issue #5](https://github.com/senlin/lean-wp/issues/5#issuecomment-323379646)
+* Set dismissible period from one week to forever
 
 ### 1.1.0
 

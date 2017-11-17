@@ -109,7 +109,10 @@ class LEAN_WP {
 		add_filter( 'gform_menu_position', array( $this, 'gform_under_settings' ) );
 
 		// Set Reading Settings "Front page displays" to Page
-		add_filter( 'pre_option_show_on_front', array( $this, 'show_page_on_front' ) );
+		// @since 1.2.0 make function pluggable so it can be overridden
+		if ( ! function_exists( 'show_page_on_front' ) ) {
+			add_filter( 'pre_option_show_on_front', array( $this, 'show_page_on_front' ) );
+		}
 
 		// Disable file editors
 		if ( ! defined( 'DISALLOW_FILE_EDIT' ) )

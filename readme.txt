@@ -1,10 +1,10 @@
 === Lean WP ===
 Contributors: senlin
-Donate link: https://so-wp.com/plugins/donations
+Donate link: https://so-wp.com/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
-Tested up to: 4.9-alpha
-Stable tag: 1.1.1
+Tested up to: 4.9
+Stable tag: 1.2.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -70,6 +70,11 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 
 == Changelog ==
+
+= 1.2.0 =
+
+* November 17, 2017
+* Makes `show_page_on_front()` function pluggable so it can be overridden in (child-)theme or other plugin; addresses [issue #10](https://github.com/senlin/lean-wp/issues/10)
 
 = 1.1.1 =
 

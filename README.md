@@ -2,12 +2,12 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on 2017.8.19
-###### Development version 1.1.1
+###### Last updated on 2017.11.17
+###### Development version 1.2.0
 ###### requires at least WordPress 4.8
-###### tested up to WordPress 4.9-alpha
+###### tested up to WordPress 4.9
 ###### Author: [Piet Bos](https://github.com/senlin)
-###### [Documentation](https://so-wp.com/lean-wp-docs/)
+###### [Documentation](https://so-wp.com/lean-wp-docs)
 
 Lean WP does a great job cleaning up the WordPress backend (Dashboard) and frontend!
 
@@ -58,6 +58,11 @@ There are various plugins that take care of a few or more items on the list abov
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
 
 ## Changelog
+
+### 1.2.0
+
+* November 17, 2017
+* Makes `show_page_on_front()` function pluggable so it can be overridden in (child-)theme or other plugin; addresses [issue #10](https://github.com/senlin/lean-wp/issues/10)
 
 ### 1.1.1
 

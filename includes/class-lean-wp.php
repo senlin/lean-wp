@@ -50,7 +50,7 @@ class LEAN_WP {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.1.1' ) {
+	public function __construct ( $file = '', $version = '1.2.0' ) {
 		$this->_version = $version;
 		$this->_token = 'lean_wp';
 

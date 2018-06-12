@@ -3,8 +3,8 @@ Contributors: senlin
 Donate link: https://so-wp.com/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
-Tested up to: 4.9
-Stable tag: 1.2.0
+Tested up to: 4.9.6
+Stable tag: 1.3.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -70,6 +70,11 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 
 == Changelog ==
+
+= 1.3.0 =
+
+* June 12, 2018
+* switch [Disable REST API plugin](https://wordpress.org/plugins/disable-json-api/) by Dave McHale for newly released [Disable WP REST API](https://wordpress.org/plugins/disable-wp-rest-api/) by Jeff Star
 
 = 1.2.0 =
 

@@ -2,10 +2,10 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on 2017.11.17
-###### Development version 1.2.0
+###### Last updated on June 12, 2018
+###### Development version 1.3.0
 ###### requires at least WordPress 4.8
-###### tested up to WordPress 4.9
+###### tested up to WordPress 4.9.6
 ###### Author: [Piet Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs)
 
@@ -58,6 +58,11 @@ There are various plugins that take care of a few or more items on the list abov
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
 
 ## Changelog
+
+### 1.3.0
+
+* June 12, 2018
+* switch [Disable REST API plugin](https://wordpress.org/plugins/disable-json-api/) by Dave McHale for newly released [Disable WP REST API](https://wordpress.org/plugins/disable-wp-rest-api/) by Jeff Star
 
 ### 1.2.0
 

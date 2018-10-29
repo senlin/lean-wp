@@ -3,7 +3,7 @@ Contributors: senlin
 Donate link: https://so-wp.com/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
-Tested up to: 4.9.6
+Tested up to: 5.0
 Stable tag: 1.3.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt

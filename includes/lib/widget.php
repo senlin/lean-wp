@@ -23,9 +23,9 @@ if (!defined('ABSPATH')) exit;
 		?>
 	</p>
 	<ul>
-		<li><?php esc_html_e( 'WP version: ',		'dashboard-widgets-suite' ); echo '<b>' . lwp_get_wp_version() . '</b>'; ?></li>
-		<li><?php esc_html_e( 'Active theme: ',		'dashboard-widgets-suite' ); lwp_get_theme_info(); ?></li>
-		<li><?php esc_html_e( 'Your IP address: ',	'dashboard-widgets-suite' ); echo '<b>' . lwp_get_user_ip() . '</b>'; ?></li>
+		<li><?php echo lwp_get_cms_version(); ?></li>
+		<li><?php esc_html_e( 'Active theme: ', 'lean-wp' ); lwp_get_theme_info(); ?></li>
+		<li><?php esc_html_e( 'Your IP address: ', 'lean-wp' ); echo '<b>' . lwp_get_user_ip() . '</b>'; ?></li>
 	</ul>
 	<p><?php
 		printf ( __( 'If you have any questions, please read the <a href="%1$s" target="_blank"><strong>documentation</strong></a> first. If that doesn\'t answer your question, you can open an issue on <a href="%2$s" target="_blank"><strong>Github</strong></a>.', 'lean-wp' ),
@@ -37,11 +37,16 @@ if (!defined('ABSPATH')) exit;
 	<?php
 
 // display current WP version number
-function lwp_get_wp_version() {
+function lwp_get_cms_version() {
 
-	return get_bloginfo( 'version' );
+	if ( function_exists( 'classicpress_version' ) ) {
+		return esc_html_e( 'ClassicPress version: ', 'lean-wp' ) . '<b>' . classicpress_version() . '</b>';
+	} else {
+		return esc_html_e( 'WordPress version: ', 'lean-wp' ) . '<b>' . get_bloginfo( 'version' ) . '</b>';
+	}
 
 }
+
 
 function lwp_get_theme_info() {
 

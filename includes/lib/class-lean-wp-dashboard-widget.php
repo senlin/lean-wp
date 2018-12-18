@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-add_action( 'wp_dashboard_setup', array( 'LEAN_WP_Dashboard_Widget','init' ) );
+add_action( 'wp_dashboard_setup', array( 'LEAN_WP_Dashboard_Widget', 'init' ) );
 
 class LEAN_WP_Dashboard_Widget {
 

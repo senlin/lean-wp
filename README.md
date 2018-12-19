@@ -2,7 +2,7 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on October 29, 2018
+###### Last updated on December 18, 2018
 ###### Development version 1.3.0
 ###### requires at least WordPress 4.8
 ###### tested up to WordPress 5.0

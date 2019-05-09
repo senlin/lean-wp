@@ -3,8 +3,8 @@ Contributors: senlin
 Donate link: https://so-wp.com/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
-Tested up to: 5.0
-Stable tag: 1.3.0
+Tested up to: 5.2
+Stable tag: 1.3.1
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -70,6 +70,11 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 
 == Changelog ==
+
+= 1.3.1 =
+
+* May 9, 2019
+* disable remove tools menu due to many complaints
 
 = 1.3.0 =
 

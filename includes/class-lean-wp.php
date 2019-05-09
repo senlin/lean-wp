@@ -50,7 +50,7 @@ class LEAN_WP {
 	 * @since   1.0.0
 	 * @return  void
 	 */
-	public function __construct ( $file = '', $version = '1.3.0' ) {
+	public function __construct ( $file = '', $version = '1.3.1' ) {
 		$this->_version = $version;
 		$this->_token = 'lean_wp';
 
@@ -288,7 +288,8 @@ class LEAN_WP {
 		remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );
 
 		// remove Tools menu
-		remove_menu_page( 'tools.php' );
+		// due to all whining removed on May 9, 2019
+		//remove_menu_page( 'tools.php' );
 
 		// remove "Header" and "Custom Background" sub-menus from "Appearance"
 		remove_submenu_page( 'themes.php', 'custom-header' );
@@ -622,7 +623,7 @@ class LEAN_WP {
 	 * @see LEAN_WP()
 	 * @return Main LEAN_WP instance
 	 */
-	public static function instance ( $file = '', $version = '1.3.0' ) {
+	public static function instance ( $file = '', $version = '1.3.1' ) {
 		if ( is_null( self::$_instance ) ) {
 			self::$_instance = new self( $file, $version );
 		}

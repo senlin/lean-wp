@@ -2,10 +2,10 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on October 29, 2018
-###### Development version 1.3.0
+###### Last updated on May 9, 2019
+###### Development version 1.3.1
 ###### requires at least WordPress 4.8
-###### tested up to WordPress 5.0
+###### tested up to WordPress 5.2
 ###### Author: [Pieter Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs)
 
@@ -58,6 +58,11 @@ There are various plugins that take care of a few or more items on the list abov
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
 
 ## Changelog
+
+### 1.3.1
+
+* May 9, 2019
+* disable remove tools menu due to many complaints
 
 ### 1.3.0
 

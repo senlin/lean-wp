@@ -1,11 +1,12 @@
 # Lean WP
 
-[![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
+[![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp) [![WP compatibility](https://plugintests.com/plugins/lean-wp/wp-badge.svg)](https://plugintests.com/plugins/lean-wp/latest) [![PHP compatibility](https://plugintests.com/plugins/lean-wp/php-badge.svg)](https://plugintests.com/plugins/lean-wp/latest) [![ClassicPress tested on version 1.0.1](https://img.shields.io/badge/ClassicPress-1.0.1-03768e.svg?style=flat-round)](https://www.classicpress.net)
 
 ###### Last updated on May 9, 2019
 ###### Development version 1.3.1
 ###### requires at least WordPress 4.8
-###### tested up to WordPress 5.2
+###### tested up to WordPress 5.2.2
+###### tested up to ClassicPress 1.0.1
 ###### Author: [Pieter Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs)
 

@@ -2,10 +2,10 @@
 
 [![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp)
 
-###### Last updated on May 9, 2019
-###### Development version 1.3.1
+###### Last updated on November 18, 2019
+###### Development version 1.4.0
 ###### requires at least WordPress 4.8
-###### tested up to WordPress 5.2
+###### tested up to WordPress 5.3
 ###### Author: [Pieter Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs)
 
@@ -58,6 +58,13 @@ There are various plugins that take care of a few or more items on the list abov
 For more information, please have a look at the [extensive documentation](https://so-wp.com/lean-wp-docs) we have made available for the Lean WP plugin, including features, FAQs and screenshots.
 
 ## Changelog
+
+### 1.4.0
+
+* November 18, 2019
+* update WP Dependency Installer to 2.0.0
+* increase minimum PHP version to 5.6 (requirement of WP Dependency Installer)
+* WP 5.3 compatible fixes [this issue](https://github.com/senlin/lean-wp/issues/17)
 
 ### 1.3.1
 

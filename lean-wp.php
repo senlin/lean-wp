@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: 		Lean WP
- * Version:     		1.3.1
+ * Version:     		1.4.0
  * Plugin URI:  		https://so-wp.com/plugin/lean-wp
  * Description:			Lean WP does a great job cleaning up the WordPress backend (Dashboard) and frontend!
  * Network:     		true
@@ -10,7 +10,8 @@
  * Author URI:  		https://so-wp.com
 
  * Requires at least:	4.8
- * Tested up to:		5.2
+ * Requires PHP: 		5.6
+ * Tested up to:		5.3
 
  * License:    			GPL-3.0+
  * License URI:			http://www.gnu.org/licenses/gpl-3.0.txt
@@ -50,7 +51,7 @@ WP_Dependency_Installer::instance()->run( __DIR__ );
  * @return object LEAN_WP
  */
 function LEAN_WP () {
-	$instance = LEAN_WP::instance( __FILE__, '1.3.1' );
+	$instance = LEAN_WP::instance( __FILE__, '1.4.0' );
 
 }
 

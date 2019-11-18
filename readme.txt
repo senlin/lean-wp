@@ -3,8 +3,9 @@ Contributors: senlin
 Donate link: https://so-wp.com/donations
 Tags: lean, wp, hide, bloat, remove, adminbar, customizer, embed, rest api, json, emojis, sidebar, dashboard widget, tools, howdy
 Requires at least: 4.8
-Tested up to: 5.2
-Stable tag: 1.3.1
+Requires PHP: 5.6
+Tested up to: 5.3
+Stable tag: 1.4.0
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -70,6 +71,13 @@ Visit the Plugin's [Documentation](https://so-wp.com/lean-wp-docs/faq) to see al
 
 
 == Changelog ==
+
+= 1.4.0 =
+
+* November 18, 2019
+* update WP Dependency Installer to 2.0.0
+* increase minimum PHP version to 5.6 (requirement of WP Dependency Installer)
+* WP 5.3 compatible fixes [this issue](https://github.com/senlin/lean-wp/issues/17)
 
 = 1.3.1 =
 

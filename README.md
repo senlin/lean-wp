@@ -5,12 +5,9 @@
 ###### Last updated on November 18, 2019
 ###### Development version 1.4.0
 ###### requires at least WordPress 4.8
-<<<<<<< HEAD
 ###### tested up to WordPress 5.3
-=======
 ###### tested up to WordPress 5.2.2
 ###### tested up to ClassicPress 1.0.1
->>>>>>> b90ef6c2e1958750179b4d03c1b4f8cf199ce383
 ###### Author: [Pieter Bos](https://github.com/senlin)
 ###### [Documentation](https://so-wp.com/lean-wp-docs)
 

@@ -9,7 +9,6 @@
 ###### tested up to WordPress 5.2.2
 ###### tested up to ClassicPress 1.1.0
 ###### Author: [Pieter Bos](https://github.com/senlin)
-###### [Documentation](https://so-wp.com/lean-wp-docs)
 
 Lean WP does a great job cleaning up the WordPress backend (Dashboard) and frontend!
 

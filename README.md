@@ -1,6 +1,6 @@
 # Lean WP
 
-[![plugin version](https://img.shields.io/wordpress/plugin/v/lean-wp.svg)](https://wordpress.org/plugins/lean-wp) [![WP compatibility](https://plugintests.com/plugins/lean-wp/wp-badge.svg)](https://plugintests.com/plugins/lean-wp/latest) [![PHP compatibility](https://plugintests.com/plugins/lean-wp/php-badge.svg)](https://plugintests.com/plugins/lean-wp/latest) [![ClassicPress tested on version 1.1.0](https://img.shields.io/badge/ClassicPress-1.1.0-03768e.svg?style=flat-round)](https://www.classicpress.net)
+### March 31, 2020: No longer in active development, use at own risk
 
 ###### Last updated on November 18, 2019
 ###### Development version 1.4.0
